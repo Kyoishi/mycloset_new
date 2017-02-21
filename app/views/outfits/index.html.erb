@@ -1,7 +1,23 @@
-<% @outfit.each do |outfit| %>
-  <p><%= outfit.brand %></p>
-  <p><%= outfit.category %></p>
-  <p><%= outfit.sub_category %></p
+
+<h2> アウター </h2>
+<% @outfit_outer.each do |outfit| %>
+  <p><%= image_tag outfit.image %></p>
 <% end %>
+
+<h2> インナー </h2>
+<% @outfit_inner.each do |outfit| %>
+  <p><%= image_tag outfit.image %></p>
+<% end %>
+
+<h2> ボトムス </h2>
+<% @outfit_bottom.each do |outfit| %>
+  <p><%= image_tag outfit.image %></p>
+<% end %>
+
+<h2> 靴 </h2>
+<% @outfit_shoe.each do |outfit| %>
+  <p><%= image_tag outfit.image %></p>
+<% end %>
+
 
 <%= link_to '新規登録', "/users/#{current_user.id}/outfits/new", method: :get %>
