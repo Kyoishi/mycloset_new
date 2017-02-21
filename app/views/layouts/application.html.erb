@@ -8,7 +8,10 @@
 </head>
 <body>
 
+<% if user_signed_in? %>
 <%= link_to 'サインアウト', "/users/sign_out", method: :delete %>
+<a href="/users/<%= current_user.id %>">マイページ</a>
+<% end %>
 
 <%= yield %>
 

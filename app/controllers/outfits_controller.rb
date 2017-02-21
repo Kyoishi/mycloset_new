@@ -3,7 +3,7 @@ class OutfitsController < ApplicationController
   before_action :authenticate_user!, except: :index
 
   def index
-    @outfit = Outfit.all
+    @outfit = Outfit.where(user_id: current_user.id)
   end
 
   def new
