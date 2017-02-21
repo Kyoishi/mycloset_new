@@ -1,5 +1,7 @@
 class OutfitsController < ApplicationController
 
+  before_action :authenticate_user!, except: :index
+
   def index
     @outfit = Outfit.all
   end
