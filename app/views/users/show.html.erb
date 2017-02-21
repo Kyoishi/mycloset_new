@@ -1,10 +1,3 @@
 <h2><%=  current_user.nickname%></h2>
 
-<% current_user.outfits.each do |outfit|  %>
-
-<%= outfit.brand %>
-<%= image_tag outfit.image_url %>
-
-<% end %>
-
 <%= link_to 'My Closet', "/users/#{current_user.id}/outfits", method: :get %>

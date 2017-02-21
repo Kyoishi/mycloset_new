@@ -3,3 +3,5 @@
   <p><%= outfit.category %></p>
   <p><%= outfit.sub_category %></p
 <% end %>
+
+<%= link_to '新規登録', "/users/#{current_user.id}/outfits/new", method: :get %>
