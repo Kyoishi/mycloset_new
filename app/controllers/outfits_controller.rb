@@ -12,7 +12,7 @@ class OutfitsController < ApplicationController
   end
 
   def create
-    Outfit.create(outfit_params)
+    Outfit.create(category: outfit_params[:category], sub_category: outfit_params[:sub_category], brand: outfit_params[:brand], date: outfit_params[:date], image: outfit_params[:image], user_id: current_user.id)
   end
 
   private
