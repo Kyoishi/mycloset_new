@@ -1,4 +1,4 @@
       <h3>
         登録が完了しました。
       </h3>
-      <a class="btn" href="/outfits">登録画面</a>
+      <%= link_to '新規登録', "/users/#{current_user.id}/outfits/new", method: :get %>

@@ -1,11 +1,15 @@
-<%= form_tag('/outfits', method: :post) do %>
+
     <h2>
       新規登録
     </h2>
-    <input placeholder="category" type="string" name="category">
-    <input placeholder="sub_category" type="string" name="sub_category">
-    <input placeholder="brand" type="string" name="brand">
-    <input placeholder="date" type="datetime" name="date">
-    <input placeholder="Image Url" type="text" name="image_urlra">
-    <input type="submit" value="SENT">
+
+<%= form_for [@user, @outfit] do |f| %>
+
+            <%= f.text_field :category %><br />
+            <%= f.text_field :sub_category %><br />
+            <%= f.text_field :brand %><br />
+            <%= f.datetime_field :date %><br />
+            <%= f.file_field :image %><br />
+            <%= f.submit %>
+
 <% end %>

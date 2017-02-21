@@ -7,6 +7,8 @@ class OutfitsController < ApplicationController
   end
 
   def new
+    @user = User.find(current_user.id)
+    @outfit = Outfit.new
   end
 
   def create
@@ -15,7 +17,7 @@ class OutfitsController < ApplicationController
 
   private
   def outfit_params
-    params.permit(:category, :sub_category, :brand, :date, :image_url)
+    params.require(:outfit).permit(:category, :sub_category, :brand, :date, :image)
   end
 
 end
