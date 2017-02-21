@@ -1,1 +1,5 @@
-<p>Hello World!</p>
+<% @outfit.each do |outfit| %>
+  <p><%= outfit.brand %></p>
+  <p><%= outfit.category %></p>
+  <p><%= outfit.sub_category %></p
+<% end %>
