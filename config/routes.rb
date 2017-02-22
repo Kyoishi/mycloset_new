@@ -6,7 +6,8 @@ Rails.application.routes.draw do
 
   resources :forms, only: :index
   resources :users, only: :show do
-    resources :outfits, only: [:index, :new, :create]
+    resources :outfits, only: [:index, :new, :create, :destroy]
+
   end
   
   end

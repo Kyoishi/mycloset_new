@@ -14,6 +14,13 @@ class OutfitsController < ApplicationController
     @outfit = Outfit.new
   end
 
+  def destroy
+    outfit = Outfit.find(params[:id])
+    if outfit.user_id == current_user.id
+      outfit.destroy
+    end
+  end
+
   def create
     Outfit.create(category: outfit_params[:category], sub_category: outfit_params[:sub_category], brand: outfit_params[:brand], date: outfit_params[:date], image: outfit_params[:image], user_id: current_user.id)
   end
