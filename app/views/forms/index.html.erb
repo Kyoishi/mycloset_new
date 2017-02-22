@@ -1,3 +1,9 @@
 
+<h2>ようこそ My Closetへ</h2>
 
-<%= link_to 'My Closet', "/users/sign_in", method: :get %>
+<% if user_signed_in? %>
+
+<a href="/users/<%= current_user.id %>">マイページ</a>
+<% else %>
+<%= link_to 'マイページ', "/users/sign_in", method: :get %>
+<% end %>

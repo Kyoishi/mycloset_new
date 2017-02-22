@@ -8,8 +8,8 @@
             <%= f.select :category, [["アウター", "outer"], ["インナー", "inner"],["ボトムス", "bottom"],["靴", "shoe"],["その他", "other"]] %>
 
             <%= f.text_field :brand, placeholder: "ブランド名"  %><br />
-            <%= f.text_field :sub_category, placeholder: "名前" %><br />
-            <%= f.datetime_field :date %><br />
+            <%= f.text_field :name, placeholder: "名前 (好きな名前をつけてください)" %><br />
+            <%= f.text_field :year, placeholder: "購入年 (例: 2016)" %><br />
             <%= f.file_field :image %><br />
             <%= f.submit "新規登録" %>
 

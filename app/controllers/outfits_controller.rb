@@ -7,6 +7,7 @@ class OutfitsController < ApplicationController
     @outfit_inner = Outfit.where(user_id: current_user.id, category: "inner")
     @outfit_bottom = Outfit.where(user_id: current_user.id, category: "bottom")
     @outfit_shoe = Outfit.where(user_id: current_user.id, category: "shoe")
+    @outfit_other = Outfit.where(user_id: current_user.id, category: "other")
   end
 
   def new
@@ -22,12 +23,12 @@ class OutfitsController < ApplicationController
   end
 
   def create
-    Outfit.create(category: outfit_params[:category], sub_category: outfit_params[:sub_category], brand: outfit_params[:brand], date: outfit_params[:date], image: outfit_params[:image], user_id: current_user.id)
+    Outfit.create(category: outfit_params[:category], name: outfit_params[:name], brand: outfit_params[:brand], year: outfit_params[:year], image: outfit_params[:image], user_id: current_user.id)
   end
 
   private
   def outfit_params
-    params.require(:outfit).permit(:category, :sub_category, :brand, :date, :image)
+    params.require(:outfit).permit(:category, :brand, :name, :year, :image)
   end
 
 end
