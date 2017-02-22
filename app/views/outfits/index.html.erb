@@ -23,5 +23,11 @@
   <%= link_to '削除', "/users/#{current_user.id}/outfits/#{outfit.id}", method: :delete %>
 <% end %>
 
+<h2> その他 </h2>
+<% @outfit_other.each do |outfit| %>
+  <p><%= image_tag outfit.image %></p>
+  <%= link_to '削除', "/users/#{current_user.id}/outfits/#{outfit.id}", method: :delete %>
+<% end %>
+
 
 <%= link_to '新規登録', "/users/#{current_user.id}/outfits/new", method: :get %>
