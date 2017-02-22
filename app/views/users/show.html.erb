@@ -1,3 +1,5 @@
 <h2><%=  current_user.nickname%></h2>
 
 <%= link_to 'My Closet', "/users/#{current_user.id}/outfits", method: :get %>
+
+<%= link_to '新規登録', "/users/#{current_user.id}/outfits/new", method: :get %>

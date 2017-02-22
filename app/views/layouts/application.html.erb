@@ -10,7 +10,7 @@
 
 <a href="/forms/">トップ</a>
 <% if user_signed_in? %>
-<%= link_to 'サインアウト', "/users/sign_out", method: :get %>
+<%= link_to 'サインアウト', "/users/sign_out", method: :delete %>
 <a href="/users/<%= current_user.id %>">マイページ</a>
 <% else %>
 <%= link_to 'サインイン', "/users/sign_in", method: :get %>
