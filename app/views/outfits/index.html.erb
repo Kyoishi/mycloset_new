@@ -1,5 +1,7 @@
 
 <h2> アウター </h2>
+  <ul>
+    <li>
 <% @outfit_outer.each do |outfit| %>
   <p><%= image_tag outfit.image ,:width => '150' %></p>
   <p>ブランド: <%= outfit.brand %></p>
@@ -7,6 +9,8 @@
   <p>購入: <%= outfit.year %>年</p>
   <%= link_to '削除', "/users/#{current_user.id}/outfits/#{outfit.id}", method: :delete %>
 <% end %>
+    </li>
+  </ul>
 
 <h2> インナー </h2>
 <% @outfit_inner.each do |outfit| %>
