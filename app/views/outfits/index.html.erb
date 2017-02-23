@@ -1,72 +1,67 @@
-    <div class="content-section-a">
+<div class="content-section-c clearfix">
 
-        <div class="container">
+  <p class="lead">
 
-            <div class="row">
-                <div class="col-lg-5 col-sm-6">
-                    <hr class="section-heading-spacer">
-                    <div class="clearfix"></div>
-                    <h2 class="section-heading">Google Web Fonts and<br>Font Awesome Icons</h2>
-                    <p class="lead">This template features the 'Lato' font, part of the <a target="_blank" href="http://www.google.com/fonts">Google Web Font library</a>, as well as <a target="_blank" href="http://fontawesome.io">icons from Font Awesome</a>.</p>
-
-                <h2> アウター </h2>
-  <ul>
-    <li>
-<% @outfit_outer.each do |outfit| %>
-  <p><%= image_tag outfit.image ,:width => '150' %></p>
-  <p>ブランド: <%= outfit.brand %></p>
-  <p>品名: <%= outfit.name %></p>
-  <p>購入: <%= outfit.year %>年</p>
-  <%= link_to '削除', "/users/#{current_user.id}/outfits/#{outfit.id}", method: :delete %>
-<% end %>
-    </li>
-  </ul>
-
-<h2> インナー </h2>
-<% @outfit_inner.each do |outfit| %>
-  <p><%= image_tag outfit.image ,:width => '150' %></p>
-  <p>ブランド: <%= outfit.brand %></p>
-  <p>品名: <%= outfit.name %></p>
-  <p>購入: <%= outfit.year %>年</p>
-  <%= link_to '削除', "/users/#{current_user.id}/outfits/#{outfit.id}", method: :delete %>
-<% end %>
-
-<h2> ボトムス </h2>
-<% @outfit_bottom.each do |outfit| %>
-  <p><%= image_tag outfit.image ,:width => '150' %></p>
-  <p>ブランド: <%= outfit.brand %></p>
-  <p>品名: <%= outfit.name %></p>
-  <p>購入: <%= outfit.year %>年</p>
-  <%= link_to '削除', "/users/#{current_user.id}/outfits/#{outfit.id}", method: :delete %>
-<% end %>
-
-<h2> 靴 </h2>
-<% @outfit_shoe.each do |outfit| %>
-  <p><%= image_tag outfit.image ,:width => '150' %></p>
-  <p>ブランド: <%= outfit.brand %></p>
-  <p>品名: <%= outfit.name %></p>
-  <p>購入: <%= outfit.year %>年</p>
-  <%= link_to '削除', "/users/#{current_user.id}/outfits/#{outfit.id}", method: :delete %>
-<% end %>
-
-<h2> その他 </h2>
-<% @outfit_other.each do |outfit| %>
-  <p><%= image_tag outfit.image ,:width => '150' %></p>
-  <p>ブランド: <%= outfit.brand %></p>
-  <p>品名: <%= outfit.name %></p>
-  <p>購入: <%= outfit.year %>年</p>
-  <%= link_to '削除', "/users/#{current_user.id}/outfits/#{outfit.id}", method: :delete %>
-<% end %>
+  <h2> アウター </h2>
 
 
-<%= link_to '新規登録', "/users/#{current_user.id}/outfits/new", method: :get %>
+  <% @outfit_outer.each do |outfit| %>
+    <div class ="content-small">
+    <p><%= image_tag outfit.image ,:width => '150' %></p>
+    <p>ブランド: <%= outfit.brand %></p>
+    <p>品名: <%= outfit.name %></p>
+    <p>購入: <%= outfit.year %>年</p>
+    <%= link_to '削除', "/users/#{current_user.id}/outfits/#{outfit.id}", method: :delete %>
+    </div>
+    <% end %>
 
-                </div>
-                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <%= image_tag "phones.png", class: "img-responsive", alt: "" %>
-                </div>
-            </div>
+  <h2> インナー </h2>
+  <% @outfit_inner.each do |outfit| %>
+    <div class ="content-small">
+    <p><%= image_tag outfit.image ,:width => '150' %></p>
+    <p>ブランド: <%= outfit.brand %></p>
+    <p>品名: <%= outfit.name %></p>
+    <p>購入: <%= outfit.year %>年</p>
+    <%= link_to '削除', "/users/#{current_user.id}/outfits/#{outfit.id}", method: :delete %>
+    </div>
+  <% end %>
 
-        </div>
+  <h2> ボトムス </h2>
+  <% @outfit_bottom.each do |outfit| %>
+    <div class ="content-small">
+    <p><%= image_tag outfit.image ,:width => '150' %></p>
+    <p>ブランド: <%= outfit.brand %></p>
+    <p>品名: <%= outfit.name %></p>
+    <p>購入: <%= outfit.year %>年</p>
+    <%= link_to '削除', "/users/#{current_user.id}/outfits/#{outfit.id}", method: :delete %>
+    </div>
+  <% end %>
+
+  <h2> 靴 </h2>
+  <% @outfit_shoe.each do |outfit| %>
+    <div class ="content-small">
+    <p><%= image_tag outfit.image ,:width => '150' %></p>
+    <p>ブランド: <%= outfit.brand %></p>
+    <p>品名: <%= outfit.name %></p>
+    <p>購入: <%= outfit.year %>年</p>
+    <%= link_to '削除', "/users/#{current_user.id}/outfits/#{outfit.id}", method: :delete %>
+    </div>
+  <% end %>
+
+  <h2> その他 </h2>
+  <% @outfit_other.each do |outfit| %>
+    <div class ="content-small">
+    <p><%= image_tag outfit.image ,:width => '150' %></p>
+    <p>ブランド: <%= outfit.brand %></p>
+    <p>品名: <%= outfit.name %></p>
+    <p>購入: <%= outfit.year %>年</p>
+    <%= link_to '削除', "/users/#{current_user.id}/outfits/#{outfit.id}", method: :delete %>
+    </div>
+  <% end %>
+
+
+  <%= link_to '新規登録', "/users/#{current_user.id}/outfits/new", method: :get %>
+
+  </p>
+</div>
         <!-- /.container -->
-
