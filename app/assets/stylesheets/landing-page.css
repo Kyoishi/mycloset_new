@@ -111,11 +111,10 @@ h6 {
 }
 /* kyohei edits */
 .content-big {
-  padding: 15px;
+  width: 100%;
 }
 /* kyohei edits */
 .content-small {
-  padding: 15px;
   background-color: white;
   float: left;
 }

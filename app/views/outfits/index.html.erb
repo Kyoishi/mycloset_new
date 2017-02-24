@@ -1,7 +1,11 @@
-<div class="content-section-c clearfix">
+<div class="content-section-c">
+
+  <div class="container">
 
   <p class="lead">
 
+
+  <div class="content-big clearfix">
   <h2> アウター </h2>
 
 
@@ -14,7 +18,9 @@
     <%= link_to '削除', "/users/#{current_user.id}/outfits/#{outfit.id}", method: :delete %>
     </div>
     <% end %>
+  </div>
 
+  <div class="content-big clearfix">
   <h2> インナー </h2>
   <% @outfit_inner.each do |outfit| %>
     <div class ="content-small">
@@ -25,7 +31,9 @@
     <%= link_to '削除', "/users/#{current_user.id}/outfits/#{outfit.id}", method: :delete %>
     </div>
   <% end %>
+  </div>
 
+  <div class="content-big clearfix">
   <h2> ボトムス </h2>
   <% @outfit_bottom.each do |outfit| %>
     <div class ="content-small">
@@ -36,7 +44,9 @@
     <%= link_to '削除', "/users/#{current_user.id}/outfits/#{outfit.id}", method: :delete %>
     </div>
   <% end %>
+  </div>
 
+  <div class="content-big clearfix">
   <h2> 靴 </h2>
   <% @outfit_shoe.each do |outfit| %>
     <div class ="content-small">
@@ -47,7 +57,9 @@
     <%= link_to '削除', "/users/#{current_user.id}/outfits/#{outfit.id}", method: :delete %>
     </div>
   <% end %>
+  </div>
 
+  <div class="content-big clearfix">
   <h2> その他 </h2>
   <% @outfit_other.each do |outfit| %>
     <div class ="content-small">
@@ -58,10 +70,14 @@
     <%= link_to '削除', "/users/#{current_user.id}/outfits/#{outfit.id}", method: :delete %>
     </div>
   <% end %>
+  </div>
 
 
   <%= link_to '新規登録', "/users/#{current_user.id}/outfits/new", method: :get %>
 
   </p>
+
+  </div>
+
 </div>
         <!-- /.container -->

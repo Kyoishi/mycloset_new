@@ -2,16 +2,15 @@
 
       <div class="container">
 
-          <div class="row">
-                <div class="col-lg-5 col-sm-6">
-                    <p class="lead">
                     <h2><%=  current_user.nickname%></h2>
                     
+                    <% if current_user.avatar? %>
+                    <%= image_tag current_user.avatar,:width => '120'  %><br /><br />
+                    <% else %>
+                    <p>写真なし</p><br /><br />
+                    <% end %>
                     <%= link_to 'My Closet', "/users/#{current_user.id}/outfits", method: :get %>
                     <%= link_to '新規登録', "/users/#{current_user.id}/outfits/new", method: :get %>
-                    </p>
-                </div>
-          </div>
       </div>
 
 </div>
