@@ -1,16 +1,30 @@
+<div class="content-section-c">
 
-    <h2>
-      新規登録
-    </h2>
+      <div class="container">
 
-<%= form_for [@user, @outfit] do |f| %>
+          <div class="row">
+                <div class="col-lg-5 col-sm-6">
+                    <p class="lead">
+          <h2>
+          新規登録
+          </h2>
 
-            <%= f.select :category, [["アウター", "outer"], ["インナー", "inner"],["ボトムス", "bottom"],["靴", "shoe"],["その他", "other"]] %>
+          <%= form_for [@user, @outfit] do |f| %>
 
-            <%= f.text_field :brand, placeholder: "ブランド名"  %><br />
-            <%= f.text_field :name, placeholder: "名前 (好きな名前をつけてください)" %><br />
-            <%= f.text_field :year, placeholder: "購入年 (例: 2016)" %><br />
+            <%= f.select :category, [["アウター", "outer"], ["インナー", "inner"],["ボトムス", "bottom"],["靴", "shoe"],["その他", "other"]] %><br /><br />
+
+            <%= f.text_field :brand, placeholder: "ブランド名", class: 'form-control'  %><br />
+            <%= f.text_field :name, placeholder: "名前 (好きな名前をつけてください)",class: 'form-control' %><br />
+            <%= f.text_field :year, placeholder: "購入年 (例: 2016)",class: 'form-control' %><br />
             <%= f.file_field :image %><br />
-            <%= f.submit "新規登録" %>
+            <%= f.submit "新規登録",class:'btn btn-lg btn-primary btn-block' %>
 
-<% end %>
+            <% end %>
+
+                </p>
+                </div>
+          </div>
+      </div>
+
+</div>
+        <!-- /.container -->
