@@ -1,0 +1,4 @@
+<%= day.day %><br />
+<%= link_to '詳細', "/users/#{current_user.id}/days/#{day.id}", method: :get %><br />
+<%= link_to '削除', "/users/#{current_user.id}/days/#{day.id}", method: :delete %><br />
+<%= link_to 'コーデの追加', "/users/#{current_user.id}/days/#{day.id}/coordinates/new", method: :get %><br /><br />

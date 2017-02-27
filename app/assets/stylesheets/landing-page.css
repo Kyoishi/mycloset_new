@@ -108,6 +108,7 @@ h6 {
 .content-section-c {
     padding: 50px 0;
     background-color: #B0C4DE;
+    min-height: 80px;
 }
 /* kyohei edits */
 .content-big {

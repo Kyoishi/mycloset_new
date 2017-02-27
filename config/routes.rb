@@ -5,10 +5,10 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :forms, only: :index
-  resources :users, only: :show do
+  resources :users, only: [:show, :edit, :update] do
     resources :outfits, only: [:index, :new, :create, :destroy]
-    resources :days, only: [:index, :new, :create, :show] do
-      resources :coordinates, only: [:new, :create]
+    resources :days, only: [:new, :create, :show, :destroy] do
+      resources :coordinates, only: [:new, :create, :destroy]
       end
   end
   

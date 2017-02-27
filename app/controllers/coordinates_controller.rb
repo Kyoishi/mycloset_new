@@ -7,9 +7,16 @@ class CoordinatesController < ApplicationController
     @coordinate = Coordinate.new
     # binding.pry
   end
+
   def create
     Coordinate.create(coordinate_params)
   end
+
+  def destroy
+    coordinate = Coordinate.find(params[:id])
+    coordinate.destroy
+  end
+
   private
   def coordinate_params
     params.require(:coordinate).permit(:day_id,:outfit_id)

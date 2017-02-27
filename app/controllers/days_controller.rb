@@ -1,9 +1,5 @@
 class DaysController < ApplicationController
 
-  def index
-    @days = Day.where(user_id: current_user.id)
-  end
-
   def new
     @user = User.find(current_user.id)
     @day = Day.new
@@ -11,6 +7,14 @@ class DaysController < ApplicationController
 
   def show
     @coordinates = Coordinate.where(day_id: params[:id])
+    @day = params[:id]
+  end
+
+  def destroy
+    day = Day.find(params[:id])
+    if day.user_id == current_user.id
+      day.destroy
+    end
   end
 
   def create

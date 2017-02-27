@@ -11,7 +11,7 @@
 
           <%= form_for [@user, @outfit] do |f| %>
 
-            <%= f.select :category, [["アウター", "outer"], ["インナー", "inner"],["ボトムス", "bottom"],["靴", "shoe"],["その他", "other"]] %><br /><br />
+            <%= f.select :category, [["アウター", 1], ["インナー", 2],["ボトムス", 3],["靴", 4],["その他", 5]] %><br /><br />
 
             <%= f.text_field :brand, placeholder: "ブランド名", class: 'form-control'  %><br />
             <%= f.text_field :name, placeholder: "名前 (好きな名前をつけてください)",class: 'form-control' %><br />

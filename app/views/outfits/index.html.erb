@@ -11,11 +11,7 @@
 
   <% @outfit_outer.each do |outfit| %>
     <div class ="content-small">
-    <p><%= image_tag outfit.image ,:width => '150' %></p>
-    <p>ブランド: <%= outfit.brand %></p>
-    <p>品名: <%= outfit.name %></p>
-    <p>購入: <%= outfit.year %>年</p>
-    <%= link_to '削除', "/users/#{current_user.id}/outfits/#{outfit.id}", method: :delete %>
+ <%= render partial: "outfits/outfit", locals: { outfit: outfit }%>
     </div>
     <% end %>
   </div>
@@ -24,11 +20,7 @@
   <h2> インナー </h2>
   <% @outfit_inner.each do |outfit| %>
     <div class ="content-small">
-    <p><%= image_tag outfit.image ,:width => '150' %></p>
-    <p>ブランド: <%= outfit.brand %></p>
-    <p>品名: <%= outfit.name %></p>
-    <p>購入: <%= outfit.year %>年</p>
-    <%= link_to '削除', "/users/#{current_user.id}/outfits/#{outfit.id}", method: :delete %>
+   <%= render partial: "outfits/outfit", locals: { outfit: outfit }%>
     </div>
   <% end %>
   </div>
@@ -37,11 +29,7 @@
   <h2> ボトムス </h2>
   <% @outfit_bottom.each do |outfit| %>
     <div class ="content-small">
-    <p><%= image_tag outfit.image ,:width => '150' %></p>
-    <p>ブランド: <%= outfit.brand %></p>
-    <p>品名: <%= outfit.name %></p>
-    <p>購入: <%= outfit.year %>年</p>
-    <%= link_to '削除', "/users/#{current_user.id}/outfits/#{outfit.id}", method: :delete %>
+    <%= render partial: "outfits/outfit", locals: { outfit: outfit }%>
     </div>
   <% end %>
   </div>
@@ -50,11 +38,7 @@
   <h2> 靴 </h2>
   <% @outfit_shoe.each do |outfit| %>
     <div class ="content-small">
-    <p><%= image_tag outfit.image ,:width => '150' %></p>
-    <p>ブランド: <%= outfit.brand %></p>
-    <p>品名: <%= outfit.name %></p>
-    <p>購入: <%= outfit.year %>年</p>
-    <%= link_to '削除', "/users/#{current_user.id}/outfits/#{outfit.id}", method: :delete %>
+    <%= render partial: "outfits/outfit", locals: { outfit: outfit }%>
     </div>
   <% end %>
   </div>
@@ -63,11 +47,7 @@
   <h2> その他 </h2>
   <% @outfit_other.each do |outfit| %>
     <div class ="content-small">
-    <p><%= image_tag outfit.image ,:width => '150' %></p>
-    <p>ブランド: <%= outfit.brand %></p>
-    <p>品名: <%= outfit.name %></p>
-    <p>購入: <%= outfit.year %>年</p>
-    <%= link_to '削除', "/users/#{current_user.id}/outfits/#{outfit.id}", method: :delete %>
+    <%= render partial: "outfits/outfit", locals: { outfit: outfit }%>
     </div>
   <% end %>
   </div>

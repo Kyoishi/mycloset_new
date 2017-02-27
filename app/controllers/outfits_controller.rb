@@ -3,11 +3,11 @@ class OutfitsController < ApplicationController
   before_action :authenticate_user!, except: :index
 
   def index
-    @outfit_outer = Outfit.where(user_id: current_user.id, category: "outer")
-    @outfit_inner = Outfit.where(user_id: current_user.id, category: "inner")
-    @outfit_bottom = Outfit.where(user_id: current_user.id, category: "bottom")
-    @outfit_shoe = Outfit.where(user_id: current_user.id, category: "shoe")
-    @outfit_other = Outfit.where(user_id: current_user.id, category: "other")
+    @outfit_outer = Outfit.where(user_id: current_user.id, category: 1)
+    @outfit_inner = Outfit.where(user_id: current_user.id, category: 2)
+    @outfit_bottom = Outfit.where(user_id: current_user.id, category: 3)
+    @outfit_shoe = Outfit.where(user_id: current_user.id, category: 4)
+    @outfit_other = Outfit.where(user_id: current_user.id, category: 5)
   end
 
   def new
