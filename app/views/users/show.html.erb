@@ -10,7 +10,18 @@
                     <p>写真なし</p><br /><br />
                     <% end %>
                     <%= link_to 'My Closet', "/users/#{current_user.id}/outfits", method: :get %>
-                    <%= link_to '新規登録', "/users/#{current_user.id}/outfits/new", method: :get %>
+                    <%= link_to '曜日ごと', "/users/#{current_user.id}/days", method: :get %>
+                    <%= link_to '新規登録', "/users/#{current_user.id}/outfits/new", method: :get %><br />
+
+                    <% @days.each do |day| %>
+<%= day.day %><br />
+<%= link_to '詳細', "/users/#{current_user.id}/days/#{day.id}", method: :get %><br />
+<%= link_to 'コーデの追加', "/users/#{current_user.id}/days/#{day.id}/coordinates/new", method: :get %>
+<br /><br />
+<% end %>
+
+<%= link_to '曜日の追加', "/users/#{current_user.id}/days/new", method: :get %>
+
       </div>
 
 </div>

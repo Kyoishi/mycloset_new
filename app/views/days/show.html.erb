@@ -1,0 +1,10 @@
+<div class="content-section-c">
+<h2>本日のコーデ</h2>
+
+<% @coordinates.each do |coordinate| %>
+<%= image_tag coordinate.outfit.image ,:width => '150' %><br />
+<% end %>
+
+<%= link_to '曜日一覧', "/users/#{current_user.id}/days", method: :get %>
+
+</div>

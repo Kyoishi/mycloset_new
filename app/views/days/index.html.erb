@@ -1,0 +1,13 @@
+<div class="content-section-c">
+<h2>曜日一覧</h2>
+
+<% @days.each do |day| %>
+<%= day.day %><br />
+<%= link_to '詳細', "/users/#{current_user.id}/days/#{day.id}", method: :get %><br />
+<%= link_to 'コーデの追加', "/users/#{current_user.id}/days/#{day.id}/coordinates/new", method: :get %>
+<br /><br />
+<% end %>
+
+<%= link_to '曜日の追加', "/users/#{current_user.id}/days/new", method: :get %>
+
+</div>

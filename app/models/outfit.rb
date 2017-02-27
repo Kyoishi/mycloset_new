@@ -1,5 +1,7 @@
 class Outfit < ActiveRecord::Base
     belongs_to :user
+    has_many :coordinates
+    has_many :days, :through => :coordinates
 
     has_attached_file :image,
                       styles:  { medium: "300x300#", thumb: "100x100#" }
