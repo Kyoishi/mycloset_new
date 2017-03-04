@@ -1,12 +1,12 @@
 <div class="content-section-c">
 
     <div class="container">
-      <div class="content-big clearfix">
+      <div class="content-small clearfix">
 
       <h2><%=  current_user.nickname%></h2>
 
       <% if current_user.avatar? %>
-      <%= image_tag current_user.avatar,:width => '120'  %><br /><br />
+      <%= image_tag current_user.avatar,:width => '150'  %><br /><br />
       <% else %>
       <p>写真なし</p><br /><br />
       <% end %>
@@ -20,14 +20,20 @@
 
       <%= link_to '新規登録', "/users/#{current_user.id}/outfits/new", method: :get %><br />
 
-      <%= link_to '曜日の追加', "/users/#{current_user.id}/days/new", method: :get %>
+      <p>新規登録</p2>
+
+      <%= form_for [@user, @day] do |f| %>
+
+      <%= f.select :day, [["月曜日", "mon"], ["火曜日", "tue"],["水曜日", "wed"],["木曜日", "thu"],["金曜日", "fri"],["土曜日", "sat"],["日曜日", "sun"]] %><br /><br />
+
+      <%= f.submit "新規登録", class:"btn btn-primary withripple" %>
+
+      <% end %>
 
       </div>
-      <div class="content-big clearfix">
-
+      
       <%= render partial: "users/day", collection: @days %>
 
-      </div>
       </div>
 
 </div>

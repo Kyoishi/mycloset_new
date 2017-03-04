@@ -1,4 +1,17 @@
+ <div class="content-small clearfix">
 <%= day.day %><br />
-<%= link_to '詳細', "/users/#{current_user.id}/days/#{day.id}", method: :get %><br />
+
+<% day.coordinates.each do |coordinate| %>
+<%= image_tag coordinate.outfit.image,:width => '100' %><br />
+<%= link_to 'コーデ削除', "/users/#{current_user.id}/days/#{day.id}/coordinates/#{coordinate.id}", method: :delete %><br />
+<% end %>
+
 <%= link_to '削除', "/users/#{current_user.id}/days/#{day.id}", method: :delete %><br />
-<%= link_to 'コーデの追加', "/users/#{current_user.id}/days/#{day.id}/coordinates/new", method: :get %><br /><br />
+<p>コーデの追加</p>
+
+<%= form_for [current_user, day, @coordinate] do |f| %>
+            <%= f.hidden_field :day_id, :value => day.id %>
+            <%= f.select :outfit_id,@outfits.map{|t| [t.name, t.id]}, class: 'form-control' %><br />
+            <%= f.submit "新規登録", class:"btn btn-primary withripple" %>
+            <% end %>
+</div>

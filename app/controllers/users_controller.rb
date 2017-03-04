@@ -3,6 +3,9 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @days = @user.days
+    @day = Day.new
+    @outfits = @user.outfits
+    @coordinate = Coordinate.new
   end
 
   def edit

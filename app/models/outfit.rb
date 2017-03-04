@@ -8,6 +8,6 @@ class Outfit < ActiveRecord::Base
     validates_attachment_content_type :image,
                                       content_type: ["image/jpg","image/jpeg","image/png"]
 
-  validates :image, presence: true
+    validates :image, presence: true
 
 end
