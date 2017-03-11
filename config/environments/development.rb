@@ -53,7 +53,7 @@ Rails.application.configure do
   config.paperclip_defaults = {
   :storage        => :s3,
   :bucket         => ENV['S3_upload-mycloset'],
-  :s3_region      => ENV['AWS_REGION'],
+  :s3_region      => ENV['US Standard'],
   :s3_host_name   => 's3-ap-northeast-1.amazonaws.com',
   :s3_credentials => {
     access_key_id: ENV['AKIAI7WNLZS3Y2W5KL5A'],

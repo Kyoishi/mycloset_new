@@ -90,4 +90,16 @@ Rails.application.configure do
     :authentication => 'login'
   }
 
+  # s3の設定
+
+  config.paperclip_defaults = {
+  :storage        => :s3,
+  :bucket         => ENV['upload_mycloset'],
+  :s3_region      => ENV['US_Standard'],
+  :s3_host_name   => 's3-ap-northeast-1.amazonaws.com',
+  :s3_credentials => {
+    access_key_id: ENV['AKIAI7WNLZS3Y2W5KL5A'],
+    secret_access_key: ENV['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']
+  }
+
 end
