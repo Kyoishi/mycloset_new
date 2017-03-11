@@ -5,10 +5,10 @@ class Outfit < ActiveRecord::Base
 
     has_attached_file :image,
                     :storage => :s3,
-                    :s3_credentials => {
-                      :access_key_id => S3KEY,
-                      :secret_access_key => S3SECRET,
-                      :s3_host_name =>  "s3-ap-northeast-1.amazonaws.com"
+                   :s3_credentials => {
+                      access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+                      secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
+                      s3_host_name: =>  "s3-ap-northeast-1.amazonaws.com"
                     }
                       styles:  { medium: "300x300#", thumb: "100x100#" }
 
