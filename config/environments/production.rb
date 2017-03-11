@@ -96,7 +96,6 @@ Rails.application.configure do
   :storage => :s3,
   :bucket => ENV['AMAZON_S3_BUCKET_NAME'],
   :s3_region => ENV['AMAZON_S3_REGION'],
-  :s3_host_name => ENV['AMAZON_S3_HOST_NAME'],
   :s3_credentials => {
     :access_key_id => ENV['AMAZON_ACCESS_KEY_ID'],
     :secret_access_key => ENV['AMAZON_SECRET_ACCESS_KEY']
