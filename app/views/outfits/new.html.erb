@@ -9,7 +9,7 @@
           新規登録
           </h2>
 
-          <%= form_for [@user, @outfit, multipart: true] do |f| %>
+          <%= form_for [@user, @outfit] do |f| %>
 
             <%= f.select :category, [["アウター", 1], ["インナー", 2],["ボトムス", 3],["靴", 4],["その他", 5]] %><br /><br />
 
