@@ -102,6 +102,5 @@ Rails.application.configure do
     secret_access_key: ENV['0oGg2AlzWqbptUgIiLeh19HpZKp71g0w4Sv8m/8l']
     }
   }
-}
 
 end
