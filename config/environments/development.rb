@@ -49,16 +49,16 @@ Rails.application.configure do
     :user_name => "favclosetinfo@gmail.com", #ご自身のgmailアドレス
     :password => "Ladmusician335", #ご自身のgmailアドレスのパスワード
     :authentication => 'login'
-
-  config.paperclip_defaults = {
-  :storage        => :s3,
-  :bucket         => ENV['S3_upload-mycloset'],
-  :s3_region      => ENV['US Standard'],
-  :s3_host_name   => 's3-ap-northeast-1.amazonaws.com',
-  :s3_credentials => {
-    access_key_id: ENV['AKIAI7WNLZS3Y2W5KL5A'],
-    secret_access_key: ENV['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']
   }
 
-  }
+
+  # config.paperclip_defaults = {
+  #:storage => :s3,
+  #:bucket => ENV['S3_BUCKET_NAME'],
+  #:s3_region => ENV['AWS_REGION'],
+  #:s3_credentials => {
+  #  :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+  #  :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+  #}
+  #}
 end

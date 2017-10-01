@@ -3,16 +3,14 @@ class OutfitsController < ApplicationController
   before_action :authenticate_user!, except: :index
 
   def index
-    @outfit_outer = Outfit.where(user_id: current_user.id, category: 1)
-    @outfit_inner = Outfit.where(user_id: current_user.id, category: 2)
-    @outfit_bottom = Outfit.where(user_id: current_user.id, category: 3)
-    @outfit_shoe = Outfit.where(user_id: current_user.id, category: 4)
-    @outfit_other = Outfit.where(user_id: current_user.id, category: 5)
+    @outfits = Outfit.where(user_id: current_user.id).joins('LEFT JOIN categories on categories.id = outfits.category_id').order('categories.display_order')
+    @newcoordinates = Newcoordinate.all
   end
 
   def new
     @user = User.find(current_user.id)
     @outfit = Outfit.new
+    @categories = Category.where(level: 3)
   end
 
   def destroy
@@ -22,13 +20,23 @@ class OutfitsController < ApplicationController
     end
   end
 
+  def edit
+    @user = User.find(current_user.id)
+    @outfit = Outfit.find(params[:id])
+    @categories = Category.where(level: 3)
+  end
+
   def create
-    Outfit.create(category: outfit_params[:category], name: outfit_params[:name], brand: outfit_params[:brand], year: outfit_params[:year], image: outfit_params[:image], user_id: current_user.id)
+    Outfit.create(category_id: outfit_params[:category_id], name: outfit_params[:name], brand: outfit_params[:brand], year: outfit_params[:year], price: outfit_params[:price], image: outfit_params[:image], user_id: current_user.id)
+  end
+
+  def update
+    Outfit.find(params[:id]).update(outfit_params)
   end
 
   private
   def outfit_params
-    params.require(:outfit).permit(:category, :brand, :name, :year, :image)
+    params.require(:outfit).permit(:category_id, :brand, :name, :year, :price, :image)
   end
 
 end

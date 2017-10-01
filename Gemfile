@@ -43,6 +43,7 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  gem 'rack-mini-profiler', '0.9.1', require: false # 簡易プロファイラ
 end
 
 gem 'pry-rails'
@@ -60,4 +61,12 @@ group :production, :staging do
 end
 
 gem 'aws-sdk', '~> 2.3'
+
+gem 'jquery-ui-rails'
+
+gem 'kaminari'
+
+gem 'image-picker-rails'
+
+gem 'mechanize'
 

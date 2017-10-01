@@ -1,0 +1,9 @@
+class Createcoordinatenew < ActiveRecord::Migration
+  def change
+    create_table :newcoordinates do |t|
+      t.integer :coordinate_id
+      t.references :outfit, index: true, foreign_key: true
+      t.timestamps null: false
+    end
+  end
+end

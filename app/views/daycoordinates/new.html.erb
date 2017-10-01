@@ -1,0 +1,31 @@
+<div class="content-section-c">
+
+      <div class="container">
+        <h2>コーデを選ぶ</h2>
+
+          <%= form_tag("/users/#{current_user.id}/days/#{params[:day_id]}/daycoordinates", method: :post) do %>
+          <select name="coordinate_id" >
+          
+          <% num = 1 %>
+          <% while num <= @maximum do %>
+           <% @newcoordinates.select{|i|i[:B] == num}.each do |s| %>
+          <option value = <%= s.coordinate_id %> data-img-src=
+           <%= s.outfit.image %> >
+           <% end %>
+           </option>
+           </br>
+           <% num = num+1 %>
+           <% end %>
+           
+          <input type="submit" value="コーデ選択" class="btn btn-primary withripple"  %>
+          <% end %>
+          <br/>
+          <%= button_to 'コーデ作成', "/users/#{current_user.id}/newcoordinates/new" ,method: :get, class: "btn btn-primary withripple" %>
+
+          <script type="text/javascript">
+          $("select").imagepicker()
+          </script>
+
+    </div>
+  </div>
+</div>

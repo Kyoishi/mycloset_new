@@ -37,7 +37,7 @@ h6 {
     padding-bottom: 50px;
     text-align: center;
     color: #f8f8f8;
-    background: url(intro-bg.jpg) no-repeat center center;
+    background: url(top_page.jpg) no-repeat center center;
     background-size: cover;
 }
 
@@ -107,7 +107,7 @@ h6 {
 /* kyohei edits */
 .content-section-c {
     padding: 50px 0;
-    background-color: #B0C4DE;
+    background-color: #ffffff;
     min-height: 80px;
 }
 /* kyohei edits */
@@ -118,13 +118,32 @@ h6 {
 .content-small {
   background-color: white;
   float: left;
+  margin: 10px;
 }
+
+/* kyohei edits */
+.content-day {
+  background-color: white;
+  min-height: 1000px;
+  float: left;
+  margin: 10px;
+}
+
 /* kyohei edits */
 .clearfix:after {
   content: "";
   clear: both;
   display: block;
 }
+/* kyohei edits */
+select{width:80px;}
+
+p {font-size: 15px;
+   font-weight: 400;
+   margin: 0px;}
+
+ul {list-style-type: none;
+    padding-left: 0;}
 
 .section-heading {
     margin-bottom: 30px;
@@ -139,7 +158,7 @@ h6 {
 .banner {
     padding: 100px 0;
     color: #f8f8f8;
-    background: url(banner-bg.jpg) no-repeat center center;
+    background: url(banner.jpg) no-repeat center center;
     background-size: cover;
 }
 
@@ -269,4 +288,9 @@ p.copyright {
 {
     display: block;
     margin-top: 10px;
+}
+
+.image_picker_image
+{
+    width: 100px;
 }

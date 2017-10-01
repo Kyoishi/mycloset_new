@@ -45,12 +45,16 @@
                     <div class="clearfix"></div>
                     <h2 class="section-heading">​
                     <br>What's My Closet</h2>
-                    <p class="lead">you can upload photos of your own outfit <br>
-                    and think about what to wear.
+                    <p class="lead">あなたが持っているたくさんの服たち <br>
+                    でも、着ているのはいつも同じ服だったりする<br>
+                    先週なに着ていったっけ。明日なに着ていこう...
+                    <br>
+                    <br>
+                    持ち服を登録してコーディネートを楽しもう
                     </p>
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <%= image_tag "ipad.png", class: "img-responsive", alt: "" %>
+                    <%= image_tag "2nd.jpg", class: "img-responsive", alt: "" %>
                 </div>
             </div>
 
@@ -69,7 +73,7 @@
                     <hr class="section-heading-spacer">
                     -->
                     <div class="clearfix"></div>
-                    <h2 class="section-heading">Let's get it started</h2>
+                    <h2 class="section-heading">さぁ、始めよう</h2>
                     <p class="lead">
                     <% if user_signed_in? %>
                     <a href="/users/<%= current_user.id %>">マイページ</a>
@@ -78,7 +82,7 @@
                     <% end %>
                 </div>
                 <div class="col-lg-5 col-sm-pull-6  col-sm-6">
-                    <%= image_tag "dog.png", class: "img-responsive", alt: "" %>
+                    <%= image_tag "coordinate.jpg", class: "img-responsive", alt: "" %>
                 </div>
             </div>
 
@@ -101,7 +105,7 @@
                     <p class="lead">This template features the 'Lato' font, part of the <a target="_blank" href="http://www.google.com/fonts">Google Web Font library</a>, as well as <a target="_blank" href="http://fontawesome.io">icons from Font Awesome</a>.</p>
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <%= image_tag "phones.png", class: "img-responsive", alt: "" %>
+                    <%= image_tag "", class: "img-responsive", alt: "" %>
                 </div>
             </div>
 

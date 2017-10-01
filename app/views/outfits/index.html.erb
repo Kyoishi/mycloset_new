@@ -6,54 +6,17 @@
 
 
   <div class="content-big clearfix">
-  <h2> アウター </h2>
+  <h2> すべて </h2>
 
 
-  <% @outfit_outer.each do |outfit| %>
+  <% @outfits.each do |outfit| %>
     <div class ="content-small">
  <%= render partial: "outfits/outfit", locals: { outfit: outfit }%>
     </div>
     <% end %>
   </div>
 
-  <div class="content-big clearfix">
-  <h2> インナー </h2>
-  <% @outfit_inner.each do |outfit| %>
-    <div class ="content-small">
-   <%= render partial: "outfits/outfit", locals: { outfit: outfit }%>
-    </div>
-  <% end %>
-  </div>
-
-  <div class="content-big clearfix">
-  <h2> ボトムス </h2>
-  <% @outfit_bottom.each do |outfit| %>
-    <div class ="content-small">
-    <%= render partial: "outfits/outfit", locals: { outfit: outfit }%>
-    </div>
-  <% end %>
-  </div>
-
-  <div class="content-big clearfix">
-  <h2> 靴 </h2>
-  <% @outfit_shoe.each do |outfit| %>
-    <div class ="content-small">
-    <%= render partial: "outfits/outfit", locals: { outfit: outfit }%>
-    </div>
-  <% end %>
-  </div>
-
-  <div class="content-big clearfix">
-  <h2> その他 </h2>
-  <% @outfit_other.each do |outfit| %>
-    <div class ="content-small">
-    <%= render partial: "outfits/outfit", locals: { outfit: outfit }%>
-    </div>
-  <% end %>
-  </div>
-
-
-  <%= link_to '新規登録', "/users/#{current_user.id}/outfits/new", method: :get %>
+  <%= link_to '新規登録', "/users/#{current_user.id}/outfits/new", class:"btn btn-primary withripple", method: :get %>
 
   </p>
 

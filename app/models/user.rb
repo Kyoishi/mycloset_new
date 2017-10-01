@@ -6,10 +6,14 @@ class User < ActiveRecord::Base
 
   has_many :outfits
   has_many :days
+  has_many :newcoordinates
 
   has_attached_file :avatar,
                       styles:  { medium: "300x300#", thumb: "100x100#" }
+
+
   validates_attachment_content_type :avatar,
                                       content_type: ["image/jpg","image/jpeg","image/png"]
   validates :nickname, presence: true
+
 end

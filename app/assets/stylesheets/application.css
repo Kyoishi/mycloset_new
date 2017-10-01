@@ -12,6 +12,8 @@
  *
  *= require font-awesome
  *= require bootstrap
+ *= require jquery-ui/datepicker
+ *= require image-picker
  *= require_self
  *= require_tree .
  */

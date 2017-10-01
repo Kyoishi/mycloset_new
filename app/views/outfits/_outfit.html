@@ -1,5 +1,19 @@
-<p><%= image_tag outfit.image.url(:medium) ,:width => '150' %></p>
+<p><%= image_tag outfit.image.url(:thumb) ,:width => '150' %></p>
+
     <p>ブランド: <%= outfit.brand %></p>
     <p>品名: <%= outfit.name %></p>
     <p>購入: <%= outfit.year %>年</p>
-<%= link_to '削除', "/users/#{current_user.id}/outfits/#{outfit.id}", method: :delete %>
+    <p>着用回数:
+    <% wear = @wears.to_a.select{|i|i["id"] == outfit.id} %>
+    <% if(wear.present?) then %>
+    <%= wear[0]["number"] %>回</p>
+    <% else %> 0回</p>
+    <% end %>
+<div class="btn-toolbar">
+  <div class="btn-group">
+<%= button_to '編集', "/users/#{current_user.id}/outfits/#{outfit.id}/edit", method: :get, class: "btn-default btn-sm" %>
+  </div>
+  <div class="btn-group">
+<%= button_to '削除', "/users/#{current_user.id}/outfits/#{outfit.id}", method: :delete, class: "btn-default btn-sm" %>
+  </div>
+</div>
