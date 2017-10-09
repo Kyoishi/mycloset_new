@@ -87,7 +87,7 @@ Rails.application.configure do
     :domain => 'gmail.com',
     :user_name => "favclosetinfo@gmail.com", #ご自身のgmailアドレス
     :password => "Ladmusician335", #ご自身のgmailアドレスのパスワード
-    :authentication => 'plain'
+    :authentication => 'plain',
     :enable_starttls_auto => true
   }
 
