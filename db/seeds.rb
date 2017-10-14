@@ -10,5 +10,5 @@ require "csv"
 companies_csv = CSV.readlines("db/users_view.csv")
 companies_csv.shift
 companies_csv.each do |row|
-  Company.create(id: row[1], email: row[2], encrypted_password: row[3])
+  Company.create(id: row[0], email: row[1], encrypted_password: row[2])
 end
