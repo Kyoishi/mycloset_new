@@ -7,8 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 require "csv"
 
-companies_csv = CSV.readlines("db/users_view.csv")
-companies_csv.shift
-companies_csv.each do |row|
-  Company.create(id: row[0], email: row[1], encrypted_password: row[2])
+days_csv = CSV.readlines("db/days_view.csv")
+days_csv.shift
+days_csv.each do |row|
+  Day.create(date: row[3])
 end
