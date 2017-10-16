@@ -12,6 +12,10 @@ days_csv.shift
 days_csv.each do |row|
   Day.create(date: row[3])
 
+end
+
+require "csv"
+
 categories_csv = CSV.readlines("db/categories_view.csv")
 categories_csv.shift
 categories_csv.each do |row|
