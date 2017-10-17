@@ -19,6 +19,6 @@ require "csv"
 categories_csv = CSV.readlines("db/categories_view.csv")
 categories_csv.shift
 categories_csv.each do |row|
-  Category.create(name: row[1], parent_id: row[2], display: row[3], level: row[6] )
+  Category.create(name: row[1], parent_id: row[2], display_order: row[3], level: row[6] )
 
 end
