@@ -7,9 +7,9 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 require "csv"
 
-categories_csv = CSV.readlines("db/categories_view.csv")
+categories_csv = CSV.readlines("db/categories.csv")
 categories_csv.shift
 categories_csv.each do |row|
-  Day.create(name: row[1])
+  Day.create(name: row[1], parent_id: row[6], display_order: row[3],level: row[4])
 
 end
