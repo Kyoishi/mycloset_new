@@ -10,6 +10,6 @@ require "csv"
 categories_csv = CSV.readlines("db/categories_utf8_ver2.csv")
 categories_csv.shift
 categories_csv.each do |row|
-  Day.create(parent_id: row[7], display_order: row[3],level: row[4])
+  Day.create(name: row[1], parent_id: row[6], display_order: row[3],level: row[4])
 
 end
