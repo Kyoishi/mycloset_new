@@ -10,6 +10,6 @@ require "csv"
 outfits_csv = CSV.readlines("db/outfits.csv")
 outfits_csv.shift
 outfits_csv.each do |row|
-  Outfit.create(brand: row[1], category_id: row[12],user_id: row[5], year: row[10], price: row[11])
+  Outfit.create(brand: row[1], category_id: row[6],user_id: row[3], year: row[4], price: row[5])
 
 end
