@@ -3,11 +3,13 @@ class DaycoordinatesController < ApplicationController
   def new
     @user = User.find(current_user.id)
      @daycoordinate = Daycoordinate.new
-     @newcoordinates = Newcoordinate.find_by_sql(['SELECT coordinate_id, outfit_id, (select outfit_id from newcoordinates as N2 where N1.coordinate_id = N2.coordinate_id group by coordinate_id) as B
+    @newcoordinates = Newcoordinate.find_by_sql(['SELECT coordinate_id, outfit_id, user_id, (select outfit_id from newcoordinates as N2 where N1.coordinate_id = N2.coordinate_id group by coordinate_id) as B
 FROM newcoordinates as N1
 LEFT JOIN outfits ON outfits.id = N1.outfit_id
 LEFT JOIN categories on categories.id = outfits.category_id
-order by B,coordinate_id,categories.display_order ;'])
+WHERE user_id = ?
+order by B,coordinate_id,categories.display_order;', current_user.id])
+
 
      # put @newcoordinates in order in which users can easily choose their coordinate 
 

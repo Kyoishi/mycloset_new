@@ -3,7 +3,11 @@ class NewcoordinatesController < ApplicationController
   def new
     @user = User.find(current_user.id)
     @newcoordinate = Newcoordinate.new
+    If Newcoordinate.exists?
     @num = Newcoordinate.maximum('coordinate_id')
+    else @num = 0
+    end
+
     / to make a new record at the lastest coordinate_id/
     
     @outfits = Outfit.where(user_id: current_user.id).joins('LEFT JOIN categories on categories.id = outfits.category_id').order('categories.display_order')
